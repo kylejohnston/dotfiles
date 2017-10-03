@@ -1,0 +1,23 @@
+[color]
+	branch = true
+	diff = true
+	grep = true
+	interactive = true
+	log = true
+	status = true
+	ui = true
+# Use separate file for username / github token / etc
+[include]
+        path = ~/.gitconfig.local
+[core]
+	autocrlf = input
+	excludesfile = ~/.gitignore
+	editor = sublime
+[help]
+	autocorrect = 1
+[merge]
+	keepBackup = false
+[push]
+	default = simple
+[credential]
+	helper = osxkeychain
