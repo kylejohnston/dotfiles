@@ -26,6 +26,7 @@ brew 'homebrew/dupes/grep'
 # Install Binaries
 brew 'doctl'
 brew 'ffmpeg'
+brew 'fzf'
 brew 'gdbm'
 brew 'git'
 brew 'htop'
