@@ -88,3 +88,5 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.dotfiles/aliases.zsh
 # Install Casks in the Applications folder
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
