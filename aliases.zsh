@@ -21,5 +21,7 @@ alias sz="source ~/.zshrc"
 alias gs="git status"
 alias o.="open ."
 alias yg="you-get"
+alias sn="sudo nano"
+
 
 alias weather="curl -4 http://wttr.in"
