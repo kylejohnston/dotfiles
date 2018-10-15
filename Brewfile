@@ -11,6 +11,7 @@ brew 'zsh'
 brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
 
+
 # Install GNU core utilities (those that come with macOS are outdated)
 # brew 'coreutils'
 
@@ -23,12 +24,18 @@ brew 'bash'
 # Install more recent versions of some macOS tools
 brew 'homebrew/dupes/grep'
 
+# Install Java 8
+cask 'java8'
+
 # Install Binaries
+brew 'ant'
 brew 'doctl'
-brew 'ffmpeg'
+brew 'libvpx'
+brew 'ffmpeg --with-libvpx'
 brew 'fzf'
 brew 'gdbm'
 brew 'git'
+brew 'gradle'
 brew 'htop'
 brew 'hub'
 brew 'lame'
