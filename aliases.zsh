@@ -15,18 +15,25 @@ alias invisible="defaults write com.apple.finder AppleShowAllFiles -bool false &
 alias ll='ls -ltrFa'
 
 # Refresh .zshrc
-alias sz="source ~/.zshrc"
+alias rz="source ~/.zshrc"
 
 # Shortcuts
+## MacOS iTunes (ZSH Plugin)
 alias gs="git status"
 alias o.="open ."
 alias yg="you-get"
 alias sn="sudo nano"
 
+# Shortcuts
+alias play="itunes play"
+alias pause="itunes pause"
+alias shuffle="itunes shuffle"
+alias next="itunes next"
+alias prev="itunes previous"
+
 alias weather="curl -4 http://wttr.in"
 
+# Image sizing and formatting
 alias resize="sips --resampleWidth 600 formatOptions 100 *"
-
 alias resize14="sips --resampleWidth 1440 formatOptions 100 *"
-
 alias convert="sips -s format jpeg ./*.png --out ."
