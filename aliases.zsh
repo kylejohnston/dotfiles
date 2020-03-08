@@ -38,5 +38,11 @@ alias resize="sips --resampleWidth 600 formatOptions 100 *"
 alias resize14="sips --resampleWidth 1440 formatOptions 100 *"
 alias convert="sips -s format jpeg ./*.png --out ."
 
+<<<<<<< HEAD
 # SASS Command
 alias sassw="sass --watch scss:css"
+=======
+# NPM
+alias npmw="npm run watch"
+alias npmd="npm run dev"
+>>>>>>> eab88b4f9f76ebfd7a25915e6e8b861b70195718
