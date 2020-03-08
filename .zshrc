@@ -1,5 +1,10 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH=/usr/local/opt/python/libexec/bin:$PATH
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/kylejohnston/.oh-my-zsh
@@ -86,7 +91,9 @@ source $ZSH/oh-my-zsh.sh
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.dotfiles/aliases.zsh
+
 # Install Casks in the Applications folder
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/usr/local/opt/node@12/bin:$PATH"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"

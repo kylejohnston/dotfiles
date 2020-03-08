@@ -37,3 +37,6 @@ alias weather="curl -4 http://wttr.in"
 alias resize="sips --resampleWidth 600 formatOptions 100 *"
 alias resize14="sips --resampleWidth 1440 formatOptions 100 *"
 alias convert="sips -s format jpeg ./*.png --out ."
+
+# SASS Command
+alias sassw="sass --watch scss:css"
