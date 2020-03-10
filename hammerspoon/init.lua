@@ -74,6 +74,12 @@ local BINDINGS = {
   -- App Hotkeys
   -- -----------
   {
+    description = 'Alfred',
+    key = 'space',
+    noAdditionalCommandBinding = true,
+    onEnter = utils.launchOrFocusApp('Alfred 3'),
+  },
+  {
     description = 'Bear',
     key = 'b',
     onEnter = utils.launchOrFocusApp('Bear'),
@@ -90,13 +96,33 @@ local BINDINGS = {
   },
   {
     description = 'Finder',
-    key = 'i',
+    key = 'h',
     onEnter = utils.launchOrHideApp('Finder'),
+  },
+  {
+    description = 'iTunes',
+    key = 'i',
+    onEnter = utils.launchOrHideApp('iTunes'),
+  },
+  {
+    description = 'Messages',
+    key = 'm',
+    onEnter = utils.launchOrHideApp('Messages'),
+  },
+  {
+    description = 'Optimage',
+    key = 'o',
+    onEnter = utils.launchOrFocusApp('Optimage'),
   },
   {
     description = 'RememBear',
     key = 'r',
     onEnter = utils.launchOrFocusApp('RememBear'),
+  },
+  {
+    description = 'Slack',
+    key = 's',
+    onEnter = utils.launchOrFocusApp('Slack'),
   },
   {
     description = 'Terminal',
@@ -139,7 +165,7 @@ local BINDINGS = {
     f.h = max.h
     win:setFrame(f)
   end)
-  
+
   -- Fill remaining space on Vizio display
   hs.hotkey.bind(HYPER, "B", function()
     local win = hs.window.focusedWindow()
@@ -152,29 +178,29 @@ local BINDINGS = {
     f.h = max.h
     win:setFrame(f)
   end)
-  
+
   -- Fullscreen Window
   hs.hotkey.bind(HYPER, "F", function()
     local win = hs.window.focusedWindow()
     if not win then return end
     win:moveToUnit(hs.layout.maximized)
   end)
-  
+
   -- Half-size Window, Left
   hs.hotkey.bind(HYPER, "Left", function()
     local win = hs.window.focusedWindow()
     if not win then return end
-    
+
     win:moveToUnit(hs.layout.left50)
   end)
-  
+
   -- Half-size Window, Right
   hs.hotkey.bind(HYPER, "Right", function()
     local win = hs.window.focusedWindow()
     if not win then return end
     win:moveToUnit(hs.layout.right50)
   end)
-  
+
   -- Half-size Window, Upper
   hs.hotkey.bind(HYPER, "Up", function()
     local win = hs.window.focusedWindow()
@@ -187,7 +213,7 @@ local BINDINGS = {
     f.h = max.h / 2
     win:setFrame(f)
   end)
-  
+
   -- Half-size Window, Lower
   hs.hotkey.bind(HYPER, "Down", function()
     local win = hs.window.focusedWindow()
@@ -200,7 +226,7 @@ local BINDINGS = {
     f.h = max.h / 2
     win:setFrame(f)
   end)
-  
+
   -- Two-third-size Window, Left
   hs.hotkey.bind(HYPER, "Z", function()
     local win = hs.window.focusedWindow()
@@ -213,7 +239,7 @@ local BINDINGS = {
     f.h = max.h
     win:setFrame(f)
   end)
-  
+
   -- Two-third-size Window, Right
   hs.hotkey.bind(HYPER, "X", function()
     local win = hs.window.focusedWindow()
@@ -226,7 +252,7 @@ local BINDINGS = {
     f.h = max.h
     win:setFrame(f)
   end)
-  
+
   -- Center Window
   hs.hotkey.bind(HYPER, "C", function()
     local win = hs.window.focusedWindow()
@@ -237,7 +263,7 @@ local BINDINGS = {
     x.y = ((max.h - f.h) / 2) + max.y
     win:setFrame(x)
   end)
-  
+
   -- Move window to other display
   hs.hotkey.bind(HYPER, 'm', function()
     -- get the focused window
@@ -245,7 +271,7 @@ local BINDINGS = {
     -- get the screen where the focused window is displayed, a.k.a. current screen
     local screen = win:screen()
     -- compute the unitRect of the focused window relative to the current screen
-    -- and move the window to the next screen setting the same unitRect 
+    -- and move the window to the next screen setting the same unitRect
     win:move(win:frame():toUnitRect(screen:frame()), screen:next(), true, 0)
   end)
 
