@@ -134,6 +134,11 @@ local BINDINGS = {
     key = 't',
     onEnter = utils.launchOrFocusApp('Things'),
   },
+  {
+    description = 'Transmit',
+    key = 'u',
+    onEnter = utils.launchOrFocusApp('Transmit'),
+  },
 
   -- --------------
   -- Screen Capture
