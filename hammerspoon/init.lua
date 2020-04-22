@@ -44,13 +44,13 @@ local BINDINGS = {
   -- ------------
   -- Meta Hotkeys
   -- ------------
-  {
-    description = 'Exit',
-    key = 'space',
-    modifiers = { K.cmd },
-    noAdditionalCommandBinding = true,
-    onEnter = function() end,
-  },
+  -- {
+  --   description = 'Exit',
+  --   key = 'space',
+  --   modifiers = { K.cmd },
+  --   noAdditionalCommandBinding = true,
+  --   onEnter = function() end,
+  -- },
   {
     description = 'Exit',
     key = 'escape',
@@ -96,13 +96,56 @@ local BINDINGS = {
   },
   {
     description = 'Finder',
-    key = 'h',
-    onEnter = utils.launchOrHideApp('Finder'),
+    key = 'f',
+    modifiers = { K.shift },
+    onEnter = utils.launchOrFocusApp('Finder'),
   },
   {
-    description = 'iTunes',
+    description = 'Finder - Downloads',
+    key = 'd',
+    modifiers = { K.shift },
+    onEnter = function()
+      local app = hs.application.find('Finder')
+      if app then
+        app:activate()
+        app:selectMenuItem('Downloads')
+      else
+        hs.application.launchOrFocus('Finder')
+      end
+    end,
+  },
+  {
+    description = 'Finder - Hide Others',
+    key = 'j',
+    modifiers = { K.shift },
+    onEnter = function()
+      local app = hs.application.find('Finder')
+      if app then
+        app:activate()
+        app:selectMenuItem('Hide Others')
+      else
+        hs.application.launchOrFocus('Finder')
+      end
+    end,
+  },
+  {
+    description = 'Finder - Hide Others',
+    key = 'q',
+    modifiers = { K.shift },
+    onEnter = function()
+      local app = hs.application.find('Finder')
+      if app then
+        app:activate()
+        app:selectMenuItem('Sleep')
+      else
+        hs.application.launchOrFocus('Finder')
+      end
+    end,
+  },
+  {
+    description = 'Music',
     key = 'i',
-    onEnter = utils.launchOrHideApp('iTunes'),
+    onEnter = utils.launchOrHideApp('Music'),
   },
   {
     description = 'Messages',
