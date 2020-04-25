@@ -129,7 +129,7 @@ local BINDINGS = {
     end,
   },
   {
-    description = 'Finder - Hide Others',
+    description = 'Finder - Sleep',
     key = 'q',
     modifiers = { K.shift },
     onEnter = function()
