@@ -85,6 +85,11 @@ local BINDINGS = {
     onEnter = utils.launchOrFocusApp('Bear'),
   },
   {
+    description = 'Calculator',
+    key = '=',
+    onEnter = utils.launchOrFocusApp('Calculator'),
+  },
+  {
     description = 'Code',
     key = 'c',
     onEnter = utils.launchOrFocusApp('Visual Studio Code'),
