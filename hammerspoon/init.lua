@@ -85,9 +85,9 @@ local BINDINGS = {
     onEnter = utils.launchOrFocusApp('Bear'),
   },
   {
-    description = 'Calculator',
+    description = 'Numi',
     key = '=',
-    onEnter = utils.launchOrFocusApp('Calculator'),
+    onEnter = utils.launchOrFocusApp('Numi'),
   },
   {
     description = 'Code',
@@ -186,6 +186,11 @@ local BINDINGS = {
     description = 'Transmit',
     key = 'u',
     onEnter = utils.launchOrFocusApp('Transmit'),
+  },
+  {
+    description = 'iA Writer',
+    key = 'w',
+    onEnter = utils.launchOrFocusApp('iA Writer'),
   },
 
   -- --------------
