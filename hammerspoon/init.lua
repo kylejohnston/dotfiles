@@ -211,32 +211,6 @@ local BINDINGS = {
   -- -----------------
   -- Window Management
   -- -----------------
--- Resize window to 1440 on Vizio display
-  hs.hotkey.bind(HYPER, "V", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-    f.x = max.x
-    f.y = max.y
-    f.w = 1440
-    f.h = max.h
-    win:setFrame(f)
-  end)
-
-  -- Fill remaining space on Vizio display
-  hs.hotkey.bind(HYPER, "B", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-    f.x = max.x + 1440
-    f.y = max.y
-    f.w = max.w - 1440
-    f.h = max.h
-    win:setFrame(f)
-  end)
-
   -- Fullscreen Window
   hs.hotkey.bind(HYPER, "F", function()
     local win = hs.window.focusedWindow()
@@ -285,7 +259,7 @@ local BINDINGS = {
     win:setFrame(f)
   end)
 
-  -- Two-third-size Window, Left
+  -- 3/4 Window, Left
   hs.hotkey.bind(HYPER, "Z", function()
     local win = hs.window.focusedWindow()
     local f = win:frame()
@@ -293,20 +267,46 @@ local BINDINGS = {
     local max = screen:frame()
     f.x = max.x
     f.y = max.y
-    f.w = max.w * .666666667
+    f.w = max.w * .75
     f.h = max.h
     win:setFrame(f)
   end)
 
-  -- Two-third-size Window, Right
+  -- 1/4-size Window, Right
   hs.hotkey.bind(HYPER, "X", function()
     local win = hs.window.focusedWindow()
     local f = win:frame()
     local screen = win:screen()
     local max = screen:frame()
-    f.x = max.x + (max.w * .333333333  )
+    f.x = max.x + (max.w * .75  )
     f.y = max.y
-    f.w = max.w * .666666667
+    f.w = max.w * .25
+    f.h = max.h
+    win:setFrame(f)
+  end)
+
+  -- 3/4 Window, Left
+  hs.hotkey.bind(HYPER, "V", function()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+    local screen = win:screen()
+    local max = screen:frame()
+    f.x = max.x + (max.w * .25)
+    f.y = max.y
+    f.w = max.w * .75
+    f.h = max.h
+    win:setFrame(f)
+  end)
+
+  -- 1/4-size Window, Right
+  hs.hotkey.bind(HYPER, "B", function()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+    local screen = win:screen()
+    local max = screen:frame()
+    f.x = max.x
+    f.y = max.y
+    f.w = max.w * .25
     f.h = max.h
     win:setFrame(f)
   end)
