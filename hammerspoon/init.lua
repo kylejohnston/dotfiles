@@ -174,7 +174,7 @@ local BINDINGS = {
   },
   {
     description = 'Terminal',
-    key = 'e',
+    key = 'p',
     onEnter = utils.launchOrFocusApp('Terminal'),
   },
   {
