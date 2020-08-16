@@ -22,10 +22,12 @@ brew 'zsh-syntax-highlighting'
 brew 'bash'
 
 # Install more recent versions of some macOS tools
-brew 'homebrew/dupes/grep'
+# Deprecated
+# brew 'homebrew/dupes/grep'
 
 # Install Java 8
-cask 'java8'
+# Deprecated
+# cask 'java8'
 
 # Install Binaries
 brew 'git'
@@ -50,7 +52,7 @@ brew 'xvid'
 brew 'php'
 brew 'composer'
 brew 'yarn'
-brew 'sass'
+brew 'node-sass'
 brew 'sqlite'
 
 
@@ -62,6 +64,7 @@ cask 'firefox'
 cask 'google-chrome'
 cask 'google-drive-file-stream'
 cask 'hammerspoon'
+cask 'hazel'
 cask 'hiddenbar'
 cask 'karabiner-elements'
 cask 'nvalt'
