@@ -95,6 +95,11 @@ local BINDINGS = {
     onEnter = utils.launchOrFocusApp('Visual Studio Code'),
   },
   {
+    description = 'Figma',
+    key = 'g',
+    onEnter = utils.launchOrFocusApp('Figma'),
+  },
+  {
     description = 'Firefox',
     key = 'f',
     onEnter = utils.launchOrFocusApp('Firefox'),
