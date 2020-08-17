@@ -41,7 +41,8 @@ brew 'youtube-dl'
 
 # PROCESSING
 brew 'ant'
-brew 'ffmpeg --with-libvpx --with-libvorbis'
+# brew 'ffmpeg --with-libvpx --with-libvorbis'
+brew 'ffmpeg'
 brew 'gradle'
 brew 'lame'
 brew 'libvpx'
