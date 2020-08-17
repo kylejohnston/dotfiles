@@ -77,7 +77,7 @@ local BINDINGS = {
     description = 'Alfred',
     key = 'space',
     noAdditionalCommandBinding = true,
-    onEnter = utils.launchOrFocusApp('Alfred 3'),
+    onEnter = utils.launchOrFocusApp('Alfred 4'),
   },
   {
     description = 'Bear',
