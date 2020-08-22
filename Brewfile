@@ -55,6 +55,7 @@ brew 'composer'
 brew 'yarn'
 brew 'node-sass'
 brew 'sqlite'
+brew 'mariadb'
 
 
 # APPS
