@@ -213,6 +213,11 @@ local BINDINGS = {
   },
 }
 
+-- Launch Apps with HYPER key
+  hs.hotkey.bind(HYPER, "m", function()
+    hs.application.launchOrFocus('Music')
+  end)
+
   -- -----------------
   -- Window Management
   -- -----------------
@@ -328,7 +333,7 @@ local BINDINGS = {
   end)
 
   -- Move window to other display
-  hs.hotkey.bind(HYPER, 'm', function()
+  hs.hotkey.bind(HYPER, 'd', function()
     -- get the focused window
     local win = hs.window.focusedWindow()
     -- get the screen where the focused window is displayed, a.k.a. current screen
