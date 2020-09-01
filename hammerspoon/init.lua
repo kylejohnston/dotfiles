@@ -90,6 +90,11 @@ local BINDINGS = {
     onEnter = utils.launchOrFocusApp('Numi'),
   },
   {
+    description = 'Music',
+    key = 'l',
+    onEnter = utils.launchOrFocusApp('Music'),
+  },
+  {
     description = 'Code',
     key = 'c',
     onEnter = utils.launchOrFocusApp('Visual Studio Code'),
@@ -153,11 +158,6 @@ local BINDINGS = {
     end,
   },
   {
-    description = 'Music',
-    key = 'i',
-    onEnter = utils.launchOrHideApp('Music'),
-  },
-  {
     description = 'Messages',
     key = 'm',
     onEnter = utils.launchOrHideApp('Messages'),
@@ -213,10 +213,9 @@ local BINDINGS = {
   },
 }
 
--- Launch Apps with HYPER key
-  hs.hotkey.bind(HYPER, "m", function()
-    hs.application.launchOrFocus('Music')
-  end)
+-- s.hotkey.bind(HYPER, "g", function() 
+-- hs.application.launchOrFocus('Music')
+-- end)
 
   -- -----------------
   -- Window Management
