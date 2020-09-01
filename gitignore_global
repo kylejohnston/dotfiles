@@ -14,3 +14,4 @@ ehthumbs.db
 
 # Other things
 .htaccess
+*.code-workspace
