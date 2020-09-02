@@ -173,8 +173,13 @@ local BINDINGS = {
     onEnter = utils.launchOrFocusApp('RememBear'),
   },
   {
-    description = 'Slack',
+    description = 'Safari',
     key = 's',
+    onEnter = utils.launchOrFocusApp('Safari'),
+  },
+  {
+    description = 'Slack',
+    key = 'k',
     onEnter = utils.launchOrFocusApp('Slack'),
   },
   {
@@ -282,7 +287,7 @@ local BINDINGS = {
   end)
 
   -- 1/4-size Window, Right
-  hs.hotkey.bind(HYPER, "X", function()
+  hs.hotkey.bind(HYPER, "w", function()
     local win = hs.window.focusedWindow()
     local f = win:frame()
     local screen = win:screen()
@@ -295,7 +300,7 @@ local BINDINGS = {
   end)
 
   -- 3/4 Window, Left
-  hs.hotkey.bind(HYPER, "V", function()
+  hs.hotkey.bind(HYPER, "x", function()
     local win = hs.window.focusedWindow()
     local f = win:frame()
     local screen = win:screen()
@@ -308,7 +313,7 @@ local BINDINGS = {
   end)
 
   -- 1/4-size Window, Right
-  hs.hotkey.bind(HYPER, "B", function()
+  hs.hotkey.bind(HYPER, "q", function()
     local win = hs.window.focusedWindow()
     local f = win:frame()
     local screen = win:screen()
