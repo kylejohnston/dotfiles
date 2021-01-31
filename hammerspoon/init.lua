@@ -33,7 +33,7 @@ hs.window.animationDuration = 0
 local modalWrapper = ModalWrapper:new({
   id = 'LAUNCHER',
   description = 'Launcher',
-  color = '#ff3300',
+  color = '#eeff00',
   key = 'space',
   modifiers = { K.cmd },
   exitAfter = 3,
@@ -158,9 +158,14 @@ local BINDINGS = {
     end,
   },
   {
+    description = 'Gmail',
+    key = 'e',
+    onEnter = utils.launchOrHideApp('Gmail'),
+  },
+  {
     description = 'Messages',
     key = 'm',
-    onEnter = utils.launchOrHideApp('Messages'),
+    onEnter = utils.launchOrHideApp('Messages.app'),
   },
   {
     description = 'Optimage',
@@ -181,6 +186,11 @@ local BINDINGS = {
     description = 'Slack',
     key = 'k',
     onEnter = utils.launchOrFocusApp('Slack'),
+  },
+  {
+    description = 'Obsidian',
+    key = 'n',
+    onEnter = utils.launchOrFocusApp('Obsidian'),
   },
   {
     description = 'Terminal',
