@@ -6,7 +6,8 @@ hs.loadSpoon('ModalMgr')
 local utils = require 'utils'
 local K = require 'keys'
 local ModalWrapper = require 'modal-wrapper'
-local AppBinding = require 'app-binding'
+-- local AppBinding = require 'app-binding'
+local wm = require('window-management')
 
 -- --------
 -- Settings
@@ -19,7 +20,7 @@ hs.menuIcon(true)
 hs.uploadCrashData(false)
 
 -- Disable animation for window resizing so it's instant.
-hs.window.animationDuration = 0
+-- hs.window.animationDuration = 0
 
 -- ---------------
 -- Global Bindings
@@ -101,13 +102,8 @@ local BINDINGS = {
   },
   {
     description = 'Figma',
-    key = 'g',
-    onEnter = utils.launchOrFocusApp('Figma'),
-  },
-  {
-    description = 'Firefox',
     key = 'f',
-    onEnter = utils.launchOrFocusApp('Firefox'),
+    onEnter = utils.launchOrFocusApp('Figma'),
   },
   {
     description = 'Finder',
@@ -158,9 +154,9 @@ local BINDINGS = {
     end,
   },
   {
-    description = 'Gmail',
+    description = 'Mimestream',
     key = 'e',
-    onEnter = utils.launchOrHideApp('Gmail'),
+    onEnter = utils.launchOrHideApp('Mimestream'),
   },
   {
     description = 'Messages',
@@ -212,6 +208,11 @@ local BINDINGS = {
     key = 'w',
     onEnter = utils.launchOrFocusApp('iA Writer'),
   },
+  {
+    description = 'Zoom',
+    key = 'z',
+    onEnter = utils.launchOrFocusApp('Zoom.us'),
+  },
 
   -- --------------
   -- Screen Capture
@@ -235,133 +236,67 @@ local BINDINGS = {
   -- -----------------
   -- Window Management
   -- -----------------
-  -- Fullscreen Window
-  hs.hotkey.bind(HYPER, "F", function()
-    local win = hs.window.focusedWindow()
-    if not win then return end
-    win:moveToUnit(hs.layout.maximized)
-  end)
 
-  -- Half-size Window, Left
-  hs.hotkey.bind(HYPER, "Left", function()
-    local win = hs.window.focusedWindow()
-    if not win then return end
+-- Window Management
 
-    win:moveToUnit(hs.layout.left50)
-  end)
+hs.hotkey.bind(HYPER, "f", function()
+  wm.windowMaximize(0)
+end)
+hs.hotkey.bind(HYPER, "Right", function()
+  wm.moveWindowToPosition(wm.screenPositions.right)
+end)
+-- hs.hotkey.bind(HYPER, "down", function()
+--   hs.window.focusedWindow():moveOneScreenEast()
+-- end)
+-- hs.hotkey.bind(HYPER, "d", function()
+--   hs.window.focusedWindow():moveOneScreenWest()
+-- end)
+hs.hotkey.bind(HYPER, "Left", function()
+  wm.moveWindowToPosition(wm.screenPositions.left)
+end)
+hs.hotkey.bind(HYPER, "q", function()
+  wm.moveWindowToPosition(wm.screenPositions.thirdLeft)
+end)
+hs.hotkey.bind(HYPER, "w", function()
+  wm.moveWindowToPosition(wm.screenPositions.thirdRight)
+end)
+hs.hotkey.bind(HYPER, "z", function()
+  wm.moveWindowToPosition(wm.screenPositions.twoThirdLeft)
+end)
+hs.hotkey.bind(HYPER, "x", function()
+  wm.moveWindowToPosition(wm.screenPositions.twoThirdRight)
+end)
+hs.hotkey.bind(HYPER, "Up", function()
+  wm.moveWindowToPosition(wm.screenPositions.top)
+end)
+hs.hotkey.bind(HYPER, "Down", function()
+  wm.moveWindowToPosition(wm.screenPositions.bottom)
+end)
 
-  -- Half-size Window, Right
-  hs.hotkey.bind(HYPER, "Right", function()
-    local win = hs.window.focusedWindow()
-    if not win then return end
-    win:moveToUnit(hs.layout.right50)
-  end)
+-- Center Window
+hs.hotkey.bind(HYPER, "C", function()
+	local win = hs.window.focusedWindow()
+	local f = win:frame()
+	local max = win:screen():frame()
+	local x = f
+	x.x = ((max.w - f.w) / 2) + max.x
+	x.y = ((max.h - f.h) / 2) + max.y
+	win:setFrame(x)
+end)
 
-  -- Half-size Window, Upper
-  hs.hotkey.bind(HYPER, "Up", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-    f.x = max.x
-    f.y = max.y
-    f.w = max.w
-    f.h = max.h / 2
-    win:setFrame(f)
-  end)
-
-  -- Half-size Window, Lower
-  hs.hotkey.bind(HYPER, "Down", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-    f.x = max.x
-    f.y = max.y + (max.h / 2)
-    f.w = max.w
-    f.h = max.h / 2
-    win:setFrame(f)
-  end)
-
-  -- 3/4 Window, Left
-  hs.hotkey.bind(HYPER, "Z", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-    f.x = max.x
-    f.y = max.y
-    f.w = max.w * .75
-    f.h = max.h
-    win:setFrame(f)
-  end)
-
-  -- 1/4-size Window, Right
-  hs.hotkey.bind(HYPER, "w", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-    f.x = max.x + (max.w * .75  )
-    f.y = max.y
-    f.w = max.w * .25
-    f.h = max.h
-    win:setFrame(f)
-  end)
-
-  -- 3/4 Window, Left
-  hs.hotkey.bind(HYPER, "x", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-    f.x = max.x + (max.w * .25)
-    f.y = max.y
-    f.w = max.w * .75
-    f.h = max.h
-    win:setFrame(f)
-  end)
-
-  -- 1/4-size Window, Right
-  hs.hotkey.bind(HYPER, "q", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-    f.x = max.x
-    f.y = max.y
-    f.w = max.w * .25
-    f.h = max.h
-    win:setFrame(f)
-  end)
-
-  -- Center Window
-  hs.hotkey.bind(HYPER, "C", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local max = win:screen():frame()
-    local x = f
-    x.x = ((max.w - f.w) / 2) + max.x
-    x.y = ((max.h - f.h) / 2) + max.y
-    win:setFrame(x)
-  end)
-
-  -- Move window to other display
-  hs.hotkey.bind(HYPER, 'd', function()
-    -- get the focused window
-    local win = hs.window.focusedWindow()
-    -- get the screen where the focused window is displayed, a.k.a. current screen
-    local screen = win:screen()
-    -- compute the unitRect of the focused window relative to the current screen
-    -- and move the window to the next screen setting the same unitRect
-    win:move(win:frame():toUnitRect(screen:frame()), screen:next(), true, 0)
-  end)
-
+--  Move window to other display
+hs.hotkey.bind(HYPER, 'd', function()
+-- get the focused window
+local win = hs.window.focusedWindow()
+-- get the screen where the focused window is displayed, a.k.a. current screen
+local screen = win:screen()
+-- compute the unitRect of the focused window relative to the current screen
+-- and move the window to the next screen setting the same unitRect
+win:move(win:frame():toUnitRect(screen:frame()), screen:next(), true, 0)
+end)
 
 modalWrapper:bindKeys(BINDINGS)
 modalWrapper:start()
-
-
 
 -- So we can easily tell when Hammerspoon loads successfully
 hs.alert.show('Hammerspoon loaded')
