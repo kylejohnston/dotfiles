@@ -2,6 +2,7 @@
 .DS_Store
 .DS_Store?
 Desktop.ini
+Icon?
 
 # Thumbnail cache files
 ._*
@@ -16,4 +17,7 @@ ehthumbs.db
 .htaccess
 *.code-workspace
 node_modules/
-*.code-workspace
+*.vscode
+## Processing
+render/
+render*
