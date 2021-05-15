@@ -81,11 +81,6 @@ local BINDINGS = {
     onEnter = utils.launchOrFocusApp('Alfred 4'),
   },
   {
-    description = 'Bear',
-    key = 'b',
-    onEnter = utils.launchOrFocusApp('Bear'),
-  },
-  {
     description = 'Numi',
     key = '=',
     onEnter = utils.launchOrFocusApp('Numi'),
