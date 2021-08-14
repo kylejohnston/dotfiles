@@ -19,5 +19,5 @@ Follow these install instructions to setup a new Mac.
 9. Update apps that use Dropbox to store settings
 10. Restart your computer to finalize the process
 
-Install (oh-my-zsh)[https://github.com/robbyrussell/oh-my-zsh]
+Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 Symlink .dotfiles/.zshrc to ~/.zshrc
