@@ -90,6 +90,15 @@ hs.hotkey.bind(HYPER, "C", function()
 	x.y = ((max.h - f.h) / 2) + max.y
 	win:setFrame(x)
 end)
+hs.hotkey.bind(HYPER, "9", function()
+	local win = hs.window.focusedWindow()
+	local f = win:frame()
+  local screen = win:screen()
+	local max = screen:frame()
+  f.w = 960
+  f.h = 640
+  win:setFrame(f)
+end)
 
 --  Move window to other display
 hs.hotkey.bind(HYPER, 'd', function()
