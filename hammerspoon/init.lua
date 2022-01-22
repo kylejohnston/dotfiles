@@ -54,7 +54,7 @@ local BINDINGS = {
   { description = 'RememBear',  key = 'r', onEnter = utils.launchOrFocusApp('RememBear'), },
   { description = 'Safari',     key = 's', onEnter = utils.launchOrFocusApp('Safari'), },
   { description = 'Slack',      key = 'k', onEnter = utils.launchOrFocusApp('Slack'), },
-  { description = 'Terminal',   key = 'p', onEnter = utils.launchOrFocusApp('Terminal'), },
+  { description = 'iTerm',   key = 'p', onEnter = utils.launchOrFocusApp('iTerm'), },
   { description = 'Things',     key = 't', onEnter = utils.launchOrFocusApp('Things'), },
   { description = 'Transmit',   key = 'u', onEnter = utils.launchOrFocusApp('Transmit'), },
   { description = 'Zoom',       key = 'z', onEnter = utils.launchOrFocusApp('Zoom.us'), },
@@ -89,6 +89,15 @@ hs.hotkey.bind(HYPER, "C", function()
 	x.x = ((max.w - f.w) / 2) + max.x
 	x.y = ((max.h - f.h) / 2) + max.y
 	win:setFrame(x)
+end)
+hs.hotkey.bind(HYPER, "1", function()
+	local win = hs.window.focusedWindow()
+	local f = win:frame()
+  local screen = win:screen()
+	local max = screen:frame()
+  f.w = 1440
+  f.h = max.h
+  win:setFrame(f)
 end)
 hs.hotkey.bind(HYPER, "9", function()
 	local win = hs.window.focusedWindow()
