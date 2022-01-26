@@ -54,7 +54,7 @@ local BINDINGS = {
   { description = 'RememBear',  key = 'r', onEnter = utils.launchOrFocusApp('RememBear'), },
   { description = 'Safari',     key = 's', onEnter = utils.launchOrFocusApp('Safari'), },
   { description = 'Slack',      key = 'k', onEnter = utils.launchOrFocusApp('Slack'), },
-  { description = 'iTerm',   key = 'p', onEnter = utils.launchOrFocusApp('iTerm'), },
+  { description = 'iTerm',      key = 'p', onEnter = utils.launchOrFocusApp('iTerm'), },
   { description = 'Things',     key = 't', onEnter = utils.launchOrFocusApp('Things'), },
   { description = 'Transmit',   key = 'u', onEnter = utils.launchOrFocusApp('Transmit'), },
   { description = 'Zoom',       key = 'z', onEnter = utils.launchOrFocusApp('Zoom.us'), },
@@ -98,6 +98,7 @@ hs.hotkey.bind(HYPER, "1", function()
   f.w = 1440
   f.h = max.h
   win:setFrame(f)
+  hs.alert.show('1440')
 end)
 hs.hotkey.bind(HYPER, "9", function()
 	local win = hs.window.focusedWindow()
@@ -107,6 +108,7 @@ hs.hotkey.bind(HYPER, "9", function()
   f.w = 960
   f.h = 640
   win:setFrame(f)
+  hs.alert.show('960×640')
 end)
 
 --  Move window to other display
