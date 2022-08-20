@@ -36,7 +36,7 @@ local BINDINGS = {
   { description = 'Reload hammerspoon', key = 'r', modifiers = { K.shift }, onEnter = function() hs.reload() end, },
 
 -- APP HOTKEYS
-  { description = 'Alfred',     key = 'space', noAdditionalCommandBinding = true, onEnter = utils.launchOrFocusApp('Alfred 4'), },
+  { description = 'Raycast',     key = 'space', noAdditionalCommandBinding = true, onEnter = utils.launchOrFocusApp('Raycast'), },
   { description = 'Chrome',     key = 'g', onEnter = utils.launchOrFocusApp('Google Chrome'), },
   { description = 'Code',       key = 'c', onEnter = utils.launchOrFocusApp('Visual Studio Code'), },
   { description = 'Figma',      key = 'f', onEnter = utils.launchOrFocusApp('Figma'), },
@@ -57,8 +57,6 @@ local BINDINGS = {
   { description = 'iTerm',      key = 'p', onEnter = utils.launchOrFocusApp('iTerm'), },
   { description = 'Things',     key = 't', onEnter = utils.launchOrFocusApp('Things'), },
   { description = 'Transmit',   key = 'u', onEnter = utils.launchOrFocusApp('Transmit'), },
-  { description = 'Zoom',       key = 'z', onEnter = utils.launchOrFocusApp('Zoom.us'), },
-
 }
 
 -- s.hotkey.bind(HYPER, "g", function()
@@ -71,15 +69,15 @@ local BINDINGS = {
 
 -- Window Management
 
-hs.hotkey.bind(HYPER, "f", function()     wm.windowMaximize(0) end)
-hs.hotkey.bind(HYPER, "Right", function() wm.moveWindowToPosition(wm.screenPositions.right) end)
-hs.hotkey.bind(HYPER, "Left", function()  wm.moveWindowToPosition(wm.screenPositions.left) end)
+-- hs.hotkey.bind(HYPER, "f", function()     wm.windowMaximize(0) end)
+-- hs.hotkey.bind(HYPER, "Right", function() wm.moveWindowToPosition(wm.screenPositions.right) end)
+-- hs.hotkey.bind(HYPER, "Left", function()  wm.moveWindowToPosition(wm.screenPositions.left) end)
 hs.hotkey.bind(HYPER, "q", function()     wm.moveWindowToPosition(wm.screenPositions.thirdLeft) end)
-hs.hotkey.bind(HYPER, "w", function()     wm.moveWindowToPosition(wm.screenPositions.thirdRight) end)
-hs.hotkey.bind(HYPER, "z", function()     wm.moveWindowToPosition(wm.screenPositions.twoThirdLeft) end)
-hs.hotkey.bind(HYPER, "x", function()     wm.moveWindowToPosition(wm.screenPositions.twoThirdRight) end)
-hs.hotkey.bind(HYPER, "Up", function()    wm.moveWindowToPosition(wm.screenPositions.top) end)
-hs.hotkey.bind(HYPER, "Down", function()  wm.moveWindowToPosition(wm.screenPositions.bottom) end)
+-- hs.hotkey.bind(HYPER, "w", function()     wm.moveWindowToPosition(wm.screenPositions.thirdRight) end)
+-- hs.hotkey.bind(HYPER, "z", function()     wm.moveWindowToPosition(wm.screenPositions.twoThirdLeft) end)
+-- hs.hotkey.bind(HYPER, "x", function()     wm.moveWindowToPosition(wm.screenPositions.twoThirdRight) end)
+-- hs.hotkey.bind(HYPER, "Up", function()    wm.moveWindowToPosition(wm.screenPositions.top) end)
+-- hs.hotkey.bind(HYPER, "Down", function()  wm.moveWindowToPosition(wm.screenPositions.bottom) end)
 -- Center Window
 hs.hotkey.bind(HYPER, "C", function()
 	local win = hs.window.focusedWindow()
@@ -100,6 +98,26 @@ hs.hotkey.bind(HYPER, "1", function()
   win:setFrame(f)
   hs.alert.show('1440')
 end)
+hs.hotkey.bind(HYPER, "2", function()
+	local win = hs.window.focusedWindow()
+	local f = win:frame()
+  local screen = win:screen()
+	local max = screen:frame()
+  f.w = 1280
+  f.h = max.h
+  win:setFrame(f)
+  hs.alert.show('1280')
+end)
+hs.hotkey.bind(HYPER, "3", function()
+	local win = hs.window.focusedWindow()
+	local f = win:frame()
+  local screen = win:screen()
+	local max = screen:frame()
+  f.w = 768
+  f.h = max.h
+  win:setFrame(f)
+  hs.alert.show('768')
+end)
 hs.hotkey.bind(HYPER, "9", function()
 	local win = hs.window.focusedWindow()
 	local f = win:frame()
@@ -112,15 +130,15 @@ hs.hotkey.bind(HYPER, "9", function()
 end)
 
 --  Move window to other display
-hs.hotkey.bind(HYPER, 'd', function()
+-- hs.hotkey.bind(HYPER, 'd', function()
 -- get the focused window
-local win = hs.window.focusedWindow()
+-- local win = hs.window.focusedWindow()
 -- get the screen where the focused window is displayed, a.k.a. current screen
-local screen = win:screen()
+-- local screen = win:screen()R
 -- compute the unitRect of the focused window relative to the current screen
 -- and move the window to the next screen setting the same unitRect
-win:move(win:frame():toUnitRect(screen:frame()), screen:next(), true, 0)
-end)
+-- win:move(win:frame():toUnitRect(screen:frame()), screen:next(), true, 0)
+-- end)
 
 -- ------------------
 -- Clipboard shortcut
