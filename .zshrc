@@ -1,10 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH=/usr/local/opt/python/libexec/bin:$PATH
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
-export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH="/usr/.composer/vendor/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/kylejohnston/.oh-my-zsh
@@ -97,3 +96,8 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 export PATH="/usr/local/opt/node@12/bin:$PATH"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export PATH=/usr/local/opt/mysql@5.7/bin:/usr/local/opt/node@12/bin:/Users/kylejohnston/.composer/vendor/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/python/libexec/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/kylejohnston/.config/composer/vendor/bin
+
+alias code='open -b com.microsoft.VSCode'
+
+export HISTCONTROL=ignoreboth:erasedups
