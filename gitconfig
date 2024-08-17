@@ -21,3 +21,5 @@
 	default = simple
 [credential]
 	helper = osxkeychain
+
+git config --global core.editor "vim"
