@@ -7,9 +7,9 @@
 # tap 'homebrew/php'
 
 # Install ZSH
-brew 'zsh'
-brew 'zsh-completions'
-brew 'zsh-syntax-highlighting'
+# brew 'zsh'
+# brew 'zsh-completions'
+# brew 'zsh-syntax-highlighting'
 
 
 # Install GNU core utilities (those that come with macOS are outdated)
@@ -35,7 +35,7 @@ brew 'htop'
 brew 'hub'
 brew 'python3'
 brew 'wget'
-brew 'xz'
+# brew 'xz'
 brew 'you-get'
 brew 'youtube-dl'
 
@@ -45,46 +45,34 @@ brew 'ant'
 brew 'ffmpeg'
 brew 'gradle'
 brew 'lame'
-brew 'libvpx'
+# :brew 'libvpx'
 brew 'x264'
-brew 'xvid'
+# brew 'xvid'
 
 # DEVELOPMENT
-brew 'php'
-brew 'composer'
-brew 'yarn'
-brew 'node-sass'
-brew 'sqlite'
-brew 'mysql'
-
+# brew 'php'
+# brew 'composer'
+# brew 'yarn'
+# brew 'node-sass'
+# brew 'sqlite'
+# brew 'mysql'
 
 # APPS
-cask 'alfred'
 cask 'dropbox'
 cask 'figma'
 cask 'firefox'
 cask 'google-chrome'
-cask 'hammerspoon'
 cask 'hazel'
+# cask 'hyperkey'
 cask 'karabiner-elements'
-cask 'nvalt'
-cask 'numi'
 cask 'optimage'
 cask 'processing'
-cask 'remembear'
-cask 'slack'
-cask 'sublime-text'
+# cask 'remembear'
+# cask 'sublime-text'
 cask 'visual-studio-code'
-cask 'toggl'
+# cask 'toggl'
 cask 'transmit'
 
 # Quickook
-cask 'qlmarkdown'
-cask 'quicklook-csv'
-
-# Install Mac App Store apps
-# mas '1Password', id: 443987910
-# mas 'HazeOver', id: 430798174
-# mas 'Helium', id: 1054607607
-# mas 'Magnet', id: 441258766
-# mas 'Sketch', id: 402476602
+# cask 'qlmarkdown'
+# cask 'quicklook-csv'
