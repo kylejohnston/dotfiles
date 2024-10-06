@@ -17,7 +17,7 @@ zstyle ':vcs_info:git:*' formats '%b '
 
 # colors, date & time, current directory, git branch
 setopt PROMPT_SUBST
-PROMPT='%F{green}%*%f %F{white}%~%f %F{red}${vcs_info_msg_0_}%f$ '
+PROMPT='%F{green}%*%f %F{white}%~%f %F{cyan}${vcs_info_msg_0_}%f$ '
 
 # make auto-completion case-insensitive
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
@@ -38,3 +38,31 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 alias code='open -b com.microsoft.VSCode'
 
 export HISTCONTROL=ignoreboth:erasedups
+
+
+# Herd injected NVM configuration
+export NVM_DIR="/Users/kylejohnston/Library/Application Support/Herd/config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+[[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
+
+# Herd injected PHP binary.
+export PATH="/Users/kylejohnston/Library/Application Support/Herd/bin/":$PATH
+
+
+# Herd injected PHP 8.2 configuration.
+export HERD_PHP_82_INI_SCAN_DIR="/Users/kylejohnston/Library/Application Support/Herd/config/php/82/"
+
+    export MARKPATH=$HOME/.marks
+    function go {
+        cd -P $MARKPATH/$1 2> /dev/null || echo "No such mark: $1"
+    }
+    function mark {
+        mkdir -p $MARKPATH; ln -s $(pwd) $MARKPATH/$1
+    }
+    function unmark {
+        rm -i $MARKPATH/$1
+    }
+    function marks {
+        ls -l $MARKPATH | sed 's/  / /g' | cut -d' ' -f9- && echo
+    }
