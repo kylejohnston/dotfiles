@@ -15,7 +15,7 @@ vim.opt.smartindent = true
 vim.opt.termguicolors = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.opt.wrap = false
+vim.opt.wrap = true
 -- sync clipboard
 vim.opt.clipboard = "unnamedplus"
 

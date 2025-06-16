@@ -1,5 +1,5 @@
 require("options")
 require("keymaps")
-require('plugins')
-require('apis')
-require('scratchy').setup()
+require("plugins")
+require("apis")
+require("scratchy").setup()
