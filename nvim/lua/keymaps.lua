@@ -4,6 +4,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Key mappings
 vim.keymap.set("n", "E", "$")
 vim.keymap.set("i", "kk", "<Esc>")
+vim.keymap.set("i", "ii", "<Esc>")
 vim.keymap.set("n", "]", "o<Esc>")
 vim.keymap.set("n", "[", "O<Esc>")
 

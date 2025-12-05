@@ -16,6 +16,7 @@ vim.opt.termguicolors = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.wrap = true
+vim.opt.linebreak = true
 -- sync clipboard
 vim.opt.clipboard = "unnamedplus"
 
@@ -28,5 +29,4 @@ vim.opt.smartcase = true
 vim.opt.cursorline = true
 
 -- minimal number of screen lines to keep above and below the cursor
-vim.opt.scrolloff = 999
-
+vim.opt.scrolloff = 8

@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Local config files (contain sensitive info)
+*.local
+.config/.gitconfig.local
+
+# Editor directories
+.vscode/
+.idea/

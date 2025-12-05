@@ -6,13 +6,15 @@
 	log = true
 	status = true
 	ui = true
+
 # Use separate file for username / github token / etc
 [include]
-        path = ~/.gitconfig.local
+	path = ~/.config/.gitconfig.local
+
 [core]
 	autocrlf = input
-	excludesfile = ~/.gitignore
-	editor = sublime
+	excludesfile = ~/.gitignore_global
+	editor = nvim
 [help]
 	autocorrect = 1
 [merge]
@@ -22,4 +24,5 @@
 [credential]
 	helper = osxkeychain
 
-git config --global core.editor "vim"
+[commit]
+	template = ~/.gitmessage
