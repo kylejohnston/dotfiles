@@ -7,22 +7,42 @@
 	status = true
 	ui = true
 
-# Use separate file for username / github token / etc
-[include]
-	path = ~/.config/.gitconfig.local
-
 [core]
 	autocrlf = input
 	excludesfile = ~/.gitignore_global
 	editor = nvim
+
 [help]
 	autocorrect = 1
+
 [merge]
 	keepBackup = false
+
 [push]
 	default = simple
+	autoSetupRemote = true
+
 [credential]
 	helper = osxkeychain
 
 [commit]
 	template = ~/.gitmessage
+
+[init]
+	defaultBranch = main
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[alias]
+	br = branch
+	co = checkout
+	ci = commit
+	st = status
+
+# Include machine-specific settings (user info, tokens, etc.)
+[include]
+	path = ~/.config/.gitconfig.local
