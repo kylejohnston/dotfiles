@@ -13,11 +13,15 @@ ehthumbs.db
 .Spotlight-V100
 .Trashes
 
-# Other things
+# Tooling
 .htaccess
 *.code-workspace
 node_modules/
-*.vscode
+.astro/
+.claude/
+.gemini/
+.vscode/
+.wrangler/
 ## Processing
 render/
 render*
