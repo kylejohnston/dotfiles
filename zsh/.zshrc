@@ -11,8 +11,6 @@ export PATH="$PATH:/Users/kylejohnston/.local/bin"
 # export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 export EDITOR="vim"
-alias code='open -b com.microsoft.VSCode "$@"'
-alias python="/Library/Frameworks/Python.framework/Versions/3.13/bin/python3"
 
 # custom prompt
 # version control (git)

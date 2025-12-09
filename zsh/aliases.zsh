@@ -26,6 +26,12 @@ alias code='open -b com.microsoft.VSCode'
 
 alias notify='osascript -e "display notification \"Command completed\" with title \"Terminal\" sound name \"Glass\""'
 
+alias code='open -b com.microsoft.VSCode "$@"'
+
+alias python="/Library/Frameworks/Python.framework/Versions/3.13/bin/python3"
+
+alias claude="/Users/kylejohnston/.claude/local/claude"
+
 # alias python=/usr/local/bin/python3
 # alias pip=/usr/local/pip3
 
