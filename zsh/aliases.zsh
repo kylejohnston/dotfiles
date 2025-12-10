@@ -50,3 +50,15 @@ gb() {
 gm() { git checkout main }
 
 gmp() { git checkout main && git pull }
+
+# 2025-12 add; pass bookmarks to nvim
+nvim() {
+  if [[ $# -ge 1 && ${#1} -eq 1 && $1 != "+" ]]; then
+    local mark="$1"
+    shift
+    command nvim -c "normal! '${mark}" "$@"
+  else
+    command nvim "$@"
+  fi
+}
+
