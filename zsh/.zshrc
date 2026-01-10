@@ -5,12 +5,13 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/.composer/vendor/bin:$PATH"
 export PATH="$PATH:/Users/kylejohnston/.local/bin"
+export PATH="$HOME/.dotfiles/bin:$PATH"
 
 # export PATH="/usr/local/sbin:/usr/local/bin:/usr/.composer/vendor/bin:/Users/kylejohnston/.local/bin:$PATH"
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
-export EDITOR="vim"
+export EDITOR="nvim"
 
 # custom prompt
 # version control (git)
