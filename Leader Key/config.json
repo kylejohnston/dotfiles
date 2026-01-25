@@ -1,0 +1,390 @@
+{
+  "actions" : [
+    {
+      "key" : "space",
+      "label" : "Raycast",
+      "type" : "url",
+      "value" : "raycast://"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "f",
+          "label" : "fullscreen",
+          "type" : "command",
+          "value" : "/usr/local/bin/aerospace fullscreen"
+        },
+        {
+          "key" : "F",
+          "label" : "flatten-workspace-tree",
+          "type" : "command",
+          "value" : "/usr/local/bin/aerospace flatten-workspace-tree"
+        },
+        {
+          "actions" : [
+            {
+              "key" : "h",
+              "label" : "left",
+              "type" : "command",
+              "value" : "/usr/local/bin/aerospace join-with left"
+            },
+            {
+              "key" : "j",
+              "label" : "down",
+              "type" : "command",
+              "value" : "/usr/local/bin/aerospace join-with down"
+            },
+            {
+              "key" : "k",
+              "label" : "up",
+              "type" : "command",
+              "value" : "/usr/local/bin/aerospace join-with up"
+            },
+            {
+              "key" : "l",
+              "label" : "right",
+              "type" : "command",
+              "value" : "/usr/local/bin/aerospace join-with right"
+            }
+          ],
+          "key" : "j",
+          "label" : "join-with",
+          "type" : "group"
+        },
+        {
+          "actions" : [
+            {
+              "key" : "a",
+              "label" : "accordion",
+              "type" : "command",
+              "value" : "/usr/local/bin/aerospace layout accordion horizontal vertical"
+            },
+            {
+              "key" : "f",
+              "label" : "floating",
+              "type" : "command",
+              "value" : "/usr/local/bin/aerospace layout floating tiling"
+            },
+            {
+              "key" : "t",
+              "label" : "tiles",
+              "type" : "command",
+              "value" : "/usr/local/bin/aerospace layout tiles vertical horizontal"
+            }
+          ],
+          "key" : "l",
+          "label" : "layout",
+          "type" : "group"
+        },
+        {
+          "actions" : [
+            {
+              "key" : "h",
+              "label" : "left",
+              "type" : "command",
+              "value" : "/usr/local/bin/aerospace move left"
+            },
+            {
+              "key" : "j",
+              "label" : "down",
+              "type" : "command",
+              "value" : "/usr/local/bin/aerospace move down"
+            },
+            {
+              "key" : "k",
+              "label" : "up",
+              "type" : "command",
+              "value" : "/usr/local/bin/aerospace move up"
+            },
+            {
+              "key" : "l",
+              "label" : "right",
+              "type" : "command",
+              "value" : "/usr/local/bin/aerospace move right"
+            },
+            {
+              "key" : "q",
+              "label" : "move to b1",
+              "type" : "command",
+              "value" : "/usr/local/bin/aerospace move-node-to-workspace b1 --focus-follows-window"
+            },
+            {
+              "key" : "w",
+              "label" : "move to b2",
+              "type" : "command",
+              "value" : "/usr/local/bin/aerospace move-node-to-workspace b2 --focus-follows-window"
+            },
+            {
+              "key" : "t",
+              "label" : "move to a1",
+              "type" : "command",
+              "value" : "/usr/local/bin/aerospace move-node-to-workspace a1 --focus-follows-window"
+            },
+            {
+              "key" : "e",
+              "label" : "move to b3",
+              "type" : "command",
+              "value" : "/usr/local/bin/aerospace move-node-to-workspace b3 --focus-follows-window"
+            },
+            {
+              "key" : "r",
+              "label" : "move to b4",
+              "type" : "command",
+              "value" : "/usr/local/bin/aerospace move-node-to-workspace b4 --focus-follows-window"
+            },
+            {
+              "key" : "p",
+              "label" : "move to p1",
+              "type" : "command",
+              "value" : "/usr/local/bin/aerospace move-node-to-workspace p1"
+            }
+          ],
+          "key" : "m",
+          "label" : "move",
+          "type" : "group"
+        },
+        {
+          "key" : "R",
+          "label" : "reload-config",
+          "type" : "command",
+          "value" : "/usr/local/bin/aerospace reload-config"
+        },
+        {
+          "key" : "s",
+          "label" : "resize mode",
+          "type" : "command",
+          "value" : "/usr/local/bin/aerospace mode resize"
+        },
+        {
+          "key" : "t",
+          "label" : "workspace t",
+          "type" : "command",
+          "value" : "/usr/local/bin/aerospace workspace a1"
+        },
+        {
+          "key" : "q",
+          "label" : "workspace q",
+          "type" : "command",
+          "value" : "/usr/local/bin/aerospace workspace b1"
+        },
+        {
+          "key" : "w",
+          "label" : "workspace w",
+          "type" : "command",
+          "value" : "/usr/local/bin/aerospace workspace b2"
+        },
+        {
+          "key" : "e",
+          "label" : "workspace e",
+          "type" : "command",
+          "value" : "/usr/local/bin/aerospace workspace b3"
+        },
+        {
+          "key" : "r",
+          "label" : "workspace r",
+          "type" : "command",
+          "value" : "/usr/local/bin/aerospace workspace b4"
+        },
+        {
+          "key" : "p",
+          "label" : "workspace p",
+          "type" : "command",
+          "value" : "/usr/local/bin/aerospace workspace p1"
+        },
+        {
+          "key" : "c",
+          "label" : "center",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/window-management/center"
+        }
+      ],
+      "iconPath" : "rectangle.grid.2x2",
+      "key" : "w",
+      "label" : "Aerospace",
+      "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "a",
+          "type" : "application",
+          "value" : "/Applications/Arc.app"
+        },
+        {
+          "key" : "m",
+          "type" : "application",
+          "value" : "/System/Applications/Messages.app"
+        },
+        {
+          "key" : "o",
+          "type" : "application",
+          "value" : "/Applications/Optimage.app"
+        },
+        {
+          "key" : "r",
+          "type" : "application",
+          "value" : "/Applications/Reeder.app"
+        },
+        {
+          "key" : "t",
+          "type" : "application",
+          "value" : "/Applications/Things3.app"
+        },
+        {
+          "key" : "w",
+          "type" : "application",
+          "value" : "/Applications/iA Writer.app"
+        },
+        {
+          "key" : "x",
+          "type" : "application",
+          "value" : "/Applications/xScope.app"
+        },
+        {
+          "key" : "f",
+          "type" : "folder",
+          "value" : "/Users/kylejohnston/Desktop"
+        }
+      ],
+      "iconPath" : "app.fill",
+      "key" : "a",
+      "label" : "Apps",
+      "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "b",
+          "label" : "Bookshelf",
+          "type" : "url",
+          "value" : "https://docs.google.com/spreadsheets/d/1zGN_-cEVf5ME-cFHVxuIBYzSIRfIopFvlYIo0NeaBDo/"
+        },
+        {
+          "key" : "c",
+          "label" : "Claude",
+          "type" : "url",
+          "value" : "https://claude.ai/chats"
+        },
+        {
+          "key" : "d",
+          "label" : "ddg.ai",
+          "type" : "url",
+          "value" : "https://duck.ai"
+        },
+        {
+          "key" : "e",
+          "label" : "Income & Expenses",
+          "type" : "url",
+          "value" : "https://docs.google.com/spreadsheets/d/1N6szBM6vSFM6Hw8fNtW5J1TPMHa-pXIVsjdLRc1Ujp8/"
+        },
+        {
+          "key" : "g",
+          "label" : "GitHub",
+          "type" : "url",
+          "value" : "https://github.com/kylejohnston?tab=repositories"
+        },
+        {
+          "key" : "f",
+          "label" : "Household Financials",
+          "type" : "url",
+          "value" : "https://docs.google.com/spreadsheets/d/1Vo0TDVU0Aari2sQWZw6I3quFmBU6tZhlgzyuHDxA2SY/"
+        },
+        {
+          "key" : "l",
+          "label" : "Grocery list",
+          "type" : "url",
+          "value" : "https://docs.google.com/document/d/1Ek87MAiOc6tNO_eyKzSCLBtrwtiA8mEzcikoFf4T9YE/edit?tab=t.0"
+        },
+        {
+          "key" : "m",
+          "label" : "memex",
+          "type" : "url",
+          "value" : "http://memex.test/"
+        },
+        {
+          "key" : "n",
+          "label" : "Nest Camera",
+          "type" : "url",
+          "value" : "https://home.nest.com/camera/6ff398913d2b4b4e8c04f8b899f65108"
+        },
+        {
+          "key" : "o",
+          "label" : "ChatGPT",
+          "type" : "url",
+          "value" : "https://chatgpt.com/"
+        },
+        {
+          "key" : "u",
+          "label" : "Etsy UBS",
+          "type" : "url",
+          "value" : "https://onesource.ubs.com/CEFSWebApp/callpage.do?bookCode=ETSY&page=login_header_new"
+        },
+        {
+          "key" : "y",
+          "label" : "YouTube",
+          "type" : "url",
+          "value" : "https://www.youtube.com/"
+        }
+      ],
+      "iconPath" : "square.stack.3d.down.forward.fill",
+      "key" : "g",
+      "label" : "Links",
+      "type" : "group"
+    },
+    {
+      "key" : "1",
+      "label" : "1Password",
+      "type" : "application",
+      "value" : "/Applications/1Password.app"
+    },
+    {
+      "key" : "b",
+      "label" : "Browser",
+      "type" : "application",
+      "value" : "/Applications/Dia.app"
+    },
+    {
+      "key" : "c",
+      "label" : "Code",
+      "type" : "application",
+      "value" : "/Applications/Visual Studio Code.app"
+    },
+    {
+      "key" : "f",
+      "label" : "Figma",
+      "type" : "application",
+      "value" : "/Applications/Figma.app"
+    },
+    {
+      "key" : "l",
+      "label" : "Claude",
+      "type" : "application",
+      "value" : "/Applications/Claude.app"
+    },
+    {
+      "key" : "m",
+      "label" : "Music",
+      "type" : "application",
+      "value" : "/System/Applications/Music.app"
+    },
+    {
+      "key" : "o",
+      "label" : "Obsidian",
+      "type" : "application",
+      "value" : "/Applications/Obsidian.app"
+    },
+    {
+      "key" : "q",
+      "label" : "sleep",
+      "type" : "url",
+      "value" : "raycast://extensions/raycast/system/sleep"
+    },
+    {
+      "key" : "t",
+      "label" : "Ghostty",
+      "type" : "application",
+      "value" : "/Applications/Ghostty.app"
+    }
+  ],
+  "type" : "group"
+}
