@@ -120,3 +120,10 @@ npx() {
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
   npx "$@"
 }
+# Show project hints when entering directories
+  cd() {
+    builtin cd "$@" || return
+    if [[ -f ".project-hint" ]]; then
+      cat ".project-hint"
+    fi
+  }
