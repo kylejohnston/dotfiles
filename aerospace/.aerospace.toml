@@ -63,12 +63,16 @@ preset = 'qwerty'
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 16
-inner.vertical =   16
-outer.left =       16
-outer.bottom =     16
-outer.top =        16
-outer.right =      16
+outer.top    = [{ monitor.main = 10 }, { monitor."BenQ PD2705Q" = 16 }, 10]
+outer.right  = [{ monitor.main = 10 }, { monitor."BenQ PD2705Q" = 16 }, 10]
+outer.bottom = [{ monitor.main = 10 }, { monitor."BenQ PD2705Q" = 16 }, 10]
+outer.left   = [{ monitor.main = 10 }, { monitor."BenQ PD2705Q" = 16 }, 10]
+inner.horizontal = 10
+inner.vertical =   10
+# outer.left =       16
+# outer.bottom =     16
+# outer.top =        16
+# outer.right =      16
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -150,5 +154,6 @@ b2 = "main"
 b3 = "main"
 b4 = "main"
 p1 = "BenQ PD2705Q"
+00 = "main"
 
 # vim: ft=toml
