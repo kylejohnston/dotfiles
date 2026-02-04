@@ -9,6 +9,12 @@
     {
       "actions" : [
         {
+          "key" : "0",
+          "label" : "workspace 0",
+          "type" : "command",
+          "value" : "/usr/local/bin/aerospace workspace 00"
+        },
+        {
           "key" : "f",
           "label" : "fullscreen",
           "type" : "command",
@@ -48,7 +54,7 @@
             }
           ],
           "key" : "j",
-          "label" : "join-with",
+          "label" : "join-with..",
           "type" : "group"
         },
         {
@@ -73,7 +79,7 @@
             }
           ],
           "key" : "l",
-          "label" : "layout",
+          "label" : "layout..",
           "type" : "group"
         },
         {
@@ -140,7 +146,7 @@
             }
           ],
           "key" : "m",
-          "label" : "move",
+          "label" : "move..",
           "type" : "group"
         },
         {
@@ -156,46 +162,47 @@
           "value" : "/usr/local/bin/aerospace mode resize"
         },
         {
-          "key" : "t",
-          "label" : "workspace t",
-          "type" : "command",
-          "value" : "/usr/local/bin/aerospace workspace a1"
-        },
-        {
-          "key" : "q",
-          "label" : "workspace q",
-          "type" : "command",
-          "value" : "/usr/local/bin/aerospace workspace b1"
-        },
-        {
+          "actions" : [
+            {
+              "key" : "e",
+              "label" : "workspace e",
+              "type" : "command",
+              "value" : "/usr/local/bin/aerospace workspace b3"
+            },
+            {
+              "key" : "p",
+              "label" : "workspace p",
+              "type" : "command",
+              "value" : "/usr/local/bin/aerospace workspace p1"
+            },
+            {
+              "key" : "r",
+              "label" : "workspace r",
+              "type" : "command",
+              "value" : "/usr/local/bin/aerospace workspace b4"
+            },
+            {
+              "key" : "q",
+              "label" : "workspace q",
+              "type" : "command",
+              "value" : "/usr/local/bin/aerospace workspace b1"
+            },
+            {
+              "key" : "t",
+              "label" : "workspace t",
+              "type" : "command",
+              "value" : "/usr/local/bin/aerospace workspace a1"
+            },
+            {
+              "key" : "w",
+              "label" : "workspace w",
+              "type" : "command",
+              "value" : "/usr/local/bin/aerospace workspace b2"
+            }
+          ],
           "key" : "w",
-          "label" : "workspace w",
-          "type" : "command",
-          "value" : "/usr/local/bin/aerospace workspace b2"
-        },
-        {
-          "key" : "e",
-          "label" : "workspace e",
-          "type" : "command",
-          "value" : "/usr/local/bin/aerospace workspace b3"
-        },
-        {
-          "key" : "r",
-          "label" : "workspace r",
-          "type" : "command",
-          "value" : "/usr/local/bin/aerospace workspace b4"
-        },
-        {
-          "key" : "p",
-          "label" : "workspace p",
-          "type" : "command",
-          "value" : "/usr/local/bin/aerospace workspace p1"
-        },
-        {
-          "key" : "c",
-          "label" : "center",
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/window-management/center"
+          "label" : "to workspace..",
+          "type" : "group"
         }
       ],
       "iconPath" : "rectangle.grid.2x2",
@@ -209,11 +216,6 @@
           "key" : "a",
           "type" : "application",
           "value" : "/Applications/Arc.app"
-        },
-        {
-          "key" : "m",
-          "type" : "application",
-          "value" : "/System/Applications/Messages.app"
         },
         {
           "key" : "o",
@@ -362,12 +364,6 @@
       "value" : "/Applications/Claude.app"
     },
     {
-      "key" : "m",
-      "label" : "Music",
-      "type" : "application",
-      "value" : "/System/Applications/Music.app"
-    },
-    {
       "key" : "o",
       "label" : "Obsidian",
       "type" : "application",
@@ -384,6 +380,24 @@
       "label" : "Ghostty",
       "type" : "application",
       "value" : "/Applications/Ghostty.app"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "e",
+          "type" : "application",
+          "value" : "/System/Applications/Messages.app"
+        },
+        {
+          "key" : "u",
+          "label" : "Music",
+          "type" : "application",
+          "value" : "/System/Applications/Music.app"
+        }
+      ],
+      "key" : "m",
+      "label" : "open m..",
+      "type" : "group"
     }
   ],
   "type" : "group"
