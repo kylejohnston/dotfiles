@@ -8,26 +8,33 @@
 # Example: Fixes #23
 
 # --- COMMIT END ---
-# Type can be:
-#   feat     : New feature
+# Type (ordered by your frequency of use):
+#   content  : Adding or updating content (posts, books, pages)
+#   style    : Visual/CSS changes
+#   chore    : Maintenance, config, dependencies, robots.txt
+#   docs     : Documentation (README, comments, guides)
+#   feat     : New feature or functionality
+#   refactor : Code restructuring without behavior change
 #   fix      : Bug fix
-#   docs     : Documentation only changes
-#   style    : Visual/CSS changes (not code formatting)
-#   refactor : Code change that neither fixes a bug nor adds a feature
-#   perf     : Performance improvement
-#   test     : Adding or updating tests
-#   chore    : Maintenance, config, dependencies
-#   build    : Build system or external dependencies
-#   ci       : CI/CD configuration changes
 # --------------------
-# Scope examples:
-#   component name, file name, or area of codebase affected
+# Scope examples (from your repos):
+#   post, page, book      - content items
+#   layout, nav, footer   - structural components
+#   color, typography     - design tokens
+#   scripts, deploy       - tooling
+#   deps, config          - project configuration
+#   robots.txt            - (often standalone, no scope needed)
 # --------------------
-# Remember to:
-#   - Use the imperative mood in the subject line (e.g., "add" not "added" or "adds")
-#   - Do not end the subject line with a period
-#   - Keep the subject line under 72 characters
-#   - Separate subject from body with a blank line
-#   - Use the body to explain what and why vs. how
-#   - Can use multiple lines with "-" for bullet points in body
+# Quick checklist:
+#   - Imperative mood ("add" not "added")
+#   - No period at end
+#   - Under 72 characters
+#   - Scope helps locate the change
+# --------------------
+# Examples from your repos:
+#   content(post): publish January 2026 learning log
+#   style(footer): refine padding and spacing
+#   chore(robots.txt): initial commit
+#   feat(scripts): add CLI admin tool for managing posts
+#   refactor(site): migrate from PHP to Astro
 # --------------------
