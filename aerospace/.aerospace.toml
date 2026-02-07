@@ -10,7 +10,7 @@ after-login-command = []
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
-  # "exec-and-forget borders active_color=0xFFff0566e hidpi=on width=5.0",
+#  "exec-and-forget borders style=round active_color=0xffff5500 inactive_color=0xff414550 hidpi=on width=8.0",
 ]
 
 exec-on-workspace-change = ['/bin/bash', '-c',
@@ -111,28 +111,16 @@ if.app-id = 'com.apple.finder'
 run = "layout floating"
 
 [[on-window-detected]]
-if.app-id = 'pl.maketheweb.cleanshotx'
-run = "layout floating"
-
-[[on-window-detected]]
-if.app-id = 'to.holepunch.runtime'
-run = "layout floating"
-
-[[on-window-detected]]
-if.app-id = 'com.sindresorhus.Plain-Text-Editor'
-run = "layout floating"
-
-[[on-window-detected]]
 if.app-id = 'com.apple.Music'
 run = "layout floating"
 
 [[on-window-detected]]
-if.app-id = 'company.thebrowser.dia'
-run = 'move-node-to-workspace b2'
+if.app-id = 'md.obsidian'
+run = 'move-node-to-workspace b1'
 
 [[on-window-detected]]
-if.app-id = 'com.figma.Desktop'
-run = 'move-node-to-workspace b4'
+if.app-id = 'company.thebrowser.dia'
+run = 'move-node-to-workspace b2'
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
@@ -144,7 +132,11 @@ run = 'move-node-to-workspace b3'
 
 [[on-window-detected]]
 if.app-id = 'com.anthropic.claudefordesktop'
-run = 'move-node-to-workspace b1'
+run = 'move-node-to-workspace b4'
+
+[[on-window-detected]]
+if.app-id = 'com.figma.Desktop'
+run = 'move-node-to-workspace b5'
 
 # com.apple.Music
 [workspace-to-monitor-force-assignment]
@@ -153,6 +145,7 @@ b1 = "main"
 b2 = "main"
 b3 = "main"
 b4 = "main"
+b5 = "main"
 p1 = "BenQ PD2705Q"
 00 = "main"
 
