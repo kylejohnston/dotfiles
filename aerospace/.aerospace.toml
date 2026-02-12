@@ -115,6 +115,14 @@ if.app-id = 'com.apple.Music'
 run = "layout floating"
 
 [[on-window-detected]]
+if.app-id = 'com.vmdanilov.optimage'
+run = "layout floating"
+
+[[on-window-detected]]
+if.app-id = 'com.brnbw.Tuna'
+run = "layout floating"
+
+[[on-window-detected]]
 if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace b1'
 
