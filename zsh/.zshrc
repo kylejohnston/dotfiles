@@ -13,6 +13,11 @@ export PATH="$HOME/.dotfiles/bin:$PATH"
 
 export EDITOR="nvim"
 
+# Use emacs-style keybindings for line editing (ctrl-a, ctrl-e, etc.)
+# This is separate from $EDITOR - you can use nvim as your editor
+# while still having familiar readline shortcuts in the shell
+bindkey -e
+
 # custom prompt
 # version control (git)
 autoload -Uz vcs_info
