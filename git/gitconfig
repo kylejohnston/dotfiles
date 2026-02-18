@@ -46,3 +46,9 @@
 # Include machine-specific settings (user info, tokens, etc.)
 [include]
 	path = ~/.config/.gitconfig.local
+[pull]
+	rebase = true
+[branch "main"]
+	rebase = true
+[fetch]
+	prune = true
