@@ -10,3 +10,6 @@
 # Editor directories
 .vscode/
 .idea/
+
+# Lock files
+nvim/lazy-lock.json
