@@ -63,10 +63,10 @@ preset = 'qwerty'
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-outer.top    = [{ monitor.main = 10 }, { monitor."BenQ PD2705Q" = 16 }, 10]
-outer.right  = [{ monitor.main = 10 }, { monitor."BenQ PD2705Q" = 16 }, 10]
-outer.bottom = [{ monitor.main = 10 }, { monitor."BenQ PD2705Q" = 16 }, 10]
-outer.left   = [{ monitor.main = 10 }, { monitor."BenQ PD2705Q" = 16 }, 10]
+outer.top    = [{ monitor.main = 10 }, { monitor."secondary" = 16 }, 10]
+outer.right  = [{ monitor.main = 10 }, { monitor."secondary" = 16 }, 10]
+outer.bottom = [{ monitor.main = 10 }, { monitor."secondary" = 16 }, 10]
+outer.left   = [{ monitor.main = 10 }, { monitor."secondary" = 16 }, 10]
 inner.horizontal = 10
 inner.vertical =   10
 # outer.left =       16
@@ -123,38 +123,49 @@ if.app-id = 'com.brnbw.Tuna'
 run = "layout floating"
 
 [[on-window-detected]]
+if.app-id = 'com.1password.1password'
+run = "layout floating"
+
+[[on-window-detected]]
 if.app-id = 'md.obsidian'
-run = 'move-node-to-workspace b1'
+run = ['layout accordion', 'move-node-to-workspace m1']
+
+[[on-window-detected]]
+if.app-id = 'com.culturedcode.ThingsMac'
+run = ['layout accordion', 'move-node-to-workspace m1']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Preview'
+run = ['layout accordion', 'move-node-to-workspace 00']
 
 [[on-window-detected]]
 if.app-id = 'company.thebrowser.dia'
-run = 'move-node-to-workspace b2'
-
-[[on-window-detected]]
-if.app-id = 'com.microsoft.VSCode'
-run = 'move-node-to-workspace b3'
+run = 'move-node-to-workspace m2'
 
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
-run = 'move-node-to-workspace b3'
+run = 'move-node-to-workspace m3'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+run = ['layout accordion', 'move-node-to-workspace m4']
 
 [[on-window-detected]]
 if.app-id = 'com.anthropic.claudefordesktop'
-run = 'move-node-to-workspace b4'
+run = ['layout accordion', 'move-node-to-workspace m4']
 
 [[on-window-detected]]
 if.app-id = 'com.figma.Desktop'
-run = 'move-node-to-workspace b5'
+run = 'move-node-to-workspace m5'
 
 # com.apple.Music
 [workspace-to-monitor-force-assignment]
-a1 = "main"
-b1 = "main"
-b2 = "main"
-b3 = "main"
-b4 = "main"
-b5 = "main"
-p1 = "BenQ PD2705Q"
 00 = "main"
+m1 = "main"
+m2 = "main"
+m3 = "main"
+m4 = "main"
+m5 = "main"
+s1 = "secondary"
 
 # vim: ft=toml
