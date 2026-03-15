@@ -36,11 +36,11 @@ alias python="/Library/Frameworks/Python.framework/Versions/3.13/bin/python3"
 mkcd () {
     mkdir -p $@ && cd ${@:$#}
 }
-pasta () {
-    pbpaste > "$HOME/Desktop/$1.md"
-}
 copy() {
     cat $1 | pbcopy
+}
+paste () {
+    pbpaste > "$HOME/Desktop/$1.md"
 }
 gb() {
     git checkout -b $1
