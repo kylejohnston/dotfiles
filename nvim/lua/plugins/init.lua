@@ -27,5 +27,13 @@ require("lazy").setup({
   -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { "habamax" } },
   -- automatically check for plugin updates
-  checker = { enabled = true },
+  checker = { enabled = true, notify = false },
+})
+
+-- Silently update plugins after Lazy has started
+vim.api.nvim_create_autocmd("User", {
+  pattern = "LazyVimStarted",
+  callback = function()
+    require("lazy").update({ show = false })
+  end,
 })
