@@ -1,18 +1,24 @@
 -- UI and colorscheme plugins
 return {
   {
-    "rebelot/kanagawa.nvim",
+    -- "ember-theme/nvim",
+    dir = vim.fn.stdpath("config") .. "/local/ember-rose",
+    name = "ember",
+    priority = 1000,
     config = function()
-      vim.cmd.colorscheme("kanagawa-wave")
+      require("ember").setup({
+        variant = "ember", -- "ember" | "ember-soft" | "ember-light"
+      })
+      vim.cmd("colorscheme ember")
     end,
   },
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
+    nfig = function()
       require("lualine").setup({
         options = {
-          theme = "kanagawa",
+          theme = "auto",
           component_separators = "|",
           section_separators = "",
         },
