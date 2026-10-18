@@ -1,11 +1,10 @@
-# zmodload zsh/zprof
+
 # If you come from bash you might have to change your $PATH.
 export PATH="/Library/Frameworks/Python.framework/Versions/3.13/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/.composer/vendor/bin:$PATH"
 export PATH="$PATH:/Users/kylejohnston/.local/bin"
 export PATH="$HOME/.dotfiles/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
 
 # export PATH="/usr/local/sbin:/usr/local/bin:/usr/.composer/vendor/bin:/Users/kylejohnston/.local/bin:$PATH"
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -39,7 +38,7 @@ else
   compinit -C
 fi
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.dotfiles/zsh/aliases.zsh
 
 # Install Casks in the Applications folder
@@ -59,20 +58,45 @@ setopt HIST_VERIFY           # Don't execute immediately upon history expansion
 # SAVEHIST=0 # for current session
 # HISTSIZE=0 # across sessions
 
-# Custom markpath function
+# Custom markpath functions
 export MARKPATH=$HOME/.marks
+
 function go {
-    cd -P $MARKPATH/$1 2> /dev/null || echo "No such mark: $1"
+    [[ -L "$MARKPATH/$1" ]] || { echo "No such mark: $1" >&2; return 1; }
+    cd -P "$MARKPATH/$1"
 }
+
 function mark {
-    mkdir -p $MARKPATH; ln -s $(pwd) $MARKPATH/$1
+    local name="${1:?mark name required}"
+    mkdir -p "$MARKPATH"
+    if [[ -L "$MARKPATH/$name" ]]; then
+        echo "Mark '$name' exists → $(readlink "$MARKPATH/$name"). Overwrite? [y/N]"
+        read -r reply && [[ "$reply" =~ ^[Yy]$ ]] || return 1
+        rm "$MARKPATH/$name"
+    fi
+    ln -s "$PWD" "$MARKPATH/$name"
 }
+
 function unmark {
-    rm -i $MARKPATH/$1
+    [[ -L "$MARKPATH/$1" ]] || { echo "No such mark: $1" >&2; return 1; }
+    rm -i "$MARKPATH/$1"
 }
+
 function marks {
-    ls -l $MARKPATH | sed 's/  / /g' | cut -d' ' -f9- && echo
+    local mark
+    for mark in "$MARKPATH"/*; do
+        [[ -L "$mark" ]] || continue
+        printf "%-20s -> %s\n" "${mark##*/}" "$(readlink "$mark")"
+    done
 }
+
+# Tab completion for go and unmark
+function _marks {
+    local -a marks
+    marks=("$MARKPATH"/*(N:t))
+    compadd -a marks
+}
+compdef _marks go unmark
 
 take () {
     mkdir -p $@ && cd ${@:$#}

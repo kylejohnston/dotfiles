@@ -30,6 +30,7 @@ alias code='open -b com.microsoft.VSCode "$@"'
 
 alias python="/Library/Frameworks/Python.framework/Versions/3.13/bin/python3"
 
+serve() { python3 -m http.server "${1:-8080}"; }
 # alias python=/usr/local/bin/python3
 # alias pip=/usr/local/pip3
 
