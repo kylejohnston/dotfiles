@@ -1,6 +1,11 @@
 # Place a copy of this config to ~/.aerospace.toml
 # After that, you can edit ~/.aerospace.toml to your liking
 
+# Config version for compatibility and deprecations
+# See: https://nikitabobko.github.io/AeroSpace/guide#config-version
+# Fallback value (if you omit the key): config-version = 1
+config-version = 2
+
 # You can use it to add commands that run after login to macOS user session.
 # 'start-at-login' needs to be 'true' for 'after-login-command' to work
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
@@ -9,9 +14,7 @@ after-login-command = []
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = [
-#  "exec-and-forget borders style=round active_color=0xffff5500 inactive_color=0xff414550 hidpi=on width=8.0",
-]
+after-startup-command = []
 
 exec-on-workspace-change = ['/bin/bash', '-c',
     'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
@@ -31,7 +34,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 accordion-padding = 48
 
 # Possible values: tiles|accordion
-default-root-container-layout = 'tiles'
+default-root-container-layout = 'accordion'
 
 # Possible values: horizontal|vertical|auto
 # 'auto' means: wide monitor (anything wider than high) gets horizontal orientation,
@@ -87,9 +90,6 @@ alt-shift-h = 'focus left'
 alt-shift-l = 'focus right'
 alt-shift-j = 'focus down --boundaries-action wrap-around-the-workspace'
 alt-shift-k = 'focus up --boundaries-action wrap-around-the-workspace'
-# shift-alt-h = 'workspace prev'
-# shift-alt-l = 'workspace next'
-# alt-r = 'mode resize'
 cmd-ctrl-alt-shift-t = 'split opposite'
 cmd-ctrl-alt-shift-b = 'balance-sizes'
 
@@ -101,64 +101,46 @@ esc = "mode main"
 ctrl-c = "mode main"
 enter = "mode main"
 
-# make all windows float by default
-# [[on-window-detected]]
-# check-further-callbacks = true
-# run = "layout accordion"
-
+# FLOATING APPS
 [[on-window-detected]]
-if.app-id = 'com.apple.finder'
-run = "layout floating"
+if = 'test %{app-bundle-id} = com.iconfactory.Tot || test %{app-bundle-id} = com.apple.Music || test %{app-bundle-id} = com.brnbw.Tuna || test %{app-bundle-id} = com.apple.finder || test %{app-bundle-id} = com.1password.1password'
+run = 'layout floating'
 
+# System windows and pop-ups, kept out of the default space
 [[on-window-detected]]
-if.app-id = 'com.apple.Music'
-run = "layout floating"
+if = 'test %{app-bundle-id} = com.apple.systempreferences || test %{app-bundle-id} = com.apple.notificationcenterui || test %{app-bundle-id} = com.apple.UserNotificationCenter'
+run = 'layout floating'
 
+## Obsidian (m1)
 [[on-window-detected]]
-if.app-id = 'com.vmdanilov.optimage'
-run = "layout floating"
+if = 'test %{app-bundle-id} = md.obsidian'
+run = 'move-node-to-workspace m1'
 
+## Dia (m2)
 [[on-window-detected]]
-if.app-id = 'com.brnbw.Tuna'
-run = "layout floating"
-
-[[on-window-detected]]
-if.app-id = 'com.1password.1password'
-run = "layout floating"
-
-[[on-window-detected]]
-if.app-id = 'md.obsidian'
-run = ['layout accordion', 'move-node-to-workspace m1']
-
-[[on-window-detected]]
-if.app-id = 'com.culturedcode.ThingsMac'
-run = ['layout accordion', 'move-node-to-workspace m1']
-
-[[on-window-detected]]
-if.app-id = 'com.apple.Preview'
-run = ['layout accordion', 'move-node-to-workspace 00']
-
-[[on-window-detected]]
-if.app-id = 'company.thebrowser.dia'
+if = 'test %{app-bundle-id} = company.thebrowser.dia'
 run = 'move-node-to-workspace m2'
 
+## Ghostty (m3)
 [[on-window-detected]]
-if.app-id = 'com.mitchellh.ghostty'
+if = 'test %{app-bundle-id} = com.mitchellh.ghostty'
 run = 'move-node-to-workspace m3'
 
+## Coding tools (m4)
 [[on-window-detected]]
-if.app-id = 'com.microsoft.VSCode'
+if = 'test %{app-bundle-id} = com.microsoft.VSCode || test %{app-bundle-id} = com.anthropic.claudefordesktop'
 run = ['layout accordion', 'move-node-to-workspace m4']
 
+## Design tools (m5): Figma, Paper
 [[on-window-detected]]
-if.app-id = 'com.anthropic.claudefordesktop'
-run = ['layout accordion', 'move-node-to-workspace m4']
-
-[[on-window-detected]]
-if.app-id = 'com.figma.Desktop'
+if = 'test %{app-bundle-id} = com.figma.Desktop || test %{app-bundle-id} = com.todesktop.2601167vjw8xe'
 run = 'move-node-to-workspace m5'
 
-# com.apple.Music
+## Catch-all (00, accordion). Keep this last.
+[[on-window-detected]]
+if = 'true'
+run = ['layout accordion', 'move-node-to-workspace 00']
+
 [workspace-to-monitor-force-assignment]
 00 = "main"
 m1 = "main"
