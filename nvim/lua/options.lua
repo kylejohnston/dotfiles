@@ -30,3 +30,7 @@ vim.opt.cursorline = true
 
 -- minimal number of screen lines to keep above and below the cursor
 vim.opt.scrolloff = 8
+
+-- treat .mdx as markdown (no dedicated mdx treesitter grammar exists;
+-- the markdown parser handles it well enough)
+vim.filetype.add({ extension = { mdx = "markdown" } })

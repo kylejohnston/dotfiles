@@ -2,20 +2,16 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+    lazy = false,
+    build = ":TSUpdate",
     config = function()
-      require("nvim-treesitter.configs").setup({
-        ensure_installed = { "c", "css", "html", "javascript", "lua", "markdown", "query", "vim", "vimdoc" },
-        auto_install = true,
-        highlight = { enable = true },
-        incremental_selection = {
-          enable = true,
-          keymaps = {
-            init_selection = "<Leader>ss",    -- start incremental selection
-            node_incremental = "<Leader>si",  -- increment to the upper named node
-            node_decremental = "<Leader>sc",  -- decrement to the previous node
-            scope_incremental = "<Leader>sd", -- increment to the upper scope
-          },
-        },
+      local filetypes = { "c", "css", "html", "javascript", "lua", "markdown", "markdown_inline", "query", "vim", "vimdoc" }
+      require("nvim-treesitter").install(filetypes)
+
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = filetypes,
+        callback = function() vim.treesitter.start() end,
       })
     end,
   },
