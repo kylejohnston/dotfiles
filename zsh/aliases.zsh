@@ -40,8 +40,14 @@ mkcd () {
 copy() {
     cat $1 | pbcopy
 }
+# paste [--desk] name: write clipboard to name.md in $PWD, or on the Desktop with --desk
 paste () {
-    pbpaste > "$HOME/Desktop/$1.md"
+    local dir=$PWD
+    if [[ $1 == --desk ]]; then
+        dir=$HOME/Desktop
+        shift
+    fi
+    pbpaste > "$dir/${1:?usage: paste [--desk] name}.md"
 }
 gb() {
     git checkout -b $1
