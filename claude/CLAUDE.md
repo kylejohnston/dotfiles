@@ -20,9 +20,14 @@ When asked to create a spec via interview, start asking questions IMMEDIATELY. D
 ## Subagent-Driven Development
 For multi-component builds (e.g., Astro sites from spec), dispatch multiple focused subagents in parallel rather than one monolithic agent.
 
-# Frontend Development Principles
-
+## Frontend Development Principles
 Apply YAGNI > KISS > Readable Code > DRY when principles conflict.
+
+## Git workflow
+- Commit work on a feature branch, not main, unless I say otherwise. Split changes into logical commits.
+- When I say 'commit and push' or 'PR', push the branch and open a PR with `gh pr create`.
+- If a push or a destructive git command (reset, branch -D) is denied, stop retrying. Tell me the exact command to run myself.
+- Never use `git add -N` or broad `git add .`. Stage only the files related to the task.
 
 ## Accessibility
 - Use semantic HTML elements; avoid non-semantic interactive elements
