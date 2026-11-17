@@ -19,6 +19,11 @@ alias v="nvim"
 
 alias weather="curl -4 http://wttr.in"
 
+# memex-static image pipeline (works from any directory)
+alias memex-watch='npm --prefix ~/Sites/memex-static run watch'
+alias memex-process='npm --prefix ~/Sites/memex-static run process'
+alias memex-deploy='~/Sites/memex-static/scripts/deploy-images.sh'
+
 # Local Dev / Laravel
 alias sql="mysql.server start"
 
@@ -40,15 +45,29 @@ mkcd () {
 copy() {
     cat $1 | pbcopy
 }
+# paste [--desk] name: write clipboard to name.md in $PWD, or on the Desktop with --desk
 paste () {
-    pbpaste > "$HOME/Desktop/$1.md"
+    local dir=$PWD
+    if [[ $1 == --desk ]]; then
+        dir=$HOME/Desktop
+        shift
+    fi
+    pbpaste > "$dir/${1:?usage: paste [--desk] name}.md"
 }
 gb() {
     git checkout -b $1
 }
 gm() { git checkout main }
 
-gmp() { git checkout main && git pull }
+# Switch to main, pull, and delete the previous branch once its remote is gone (i.e. the PR merged and was auto-deleted)
+gmp() {
+  local b
+  b=$(git branch --show-current)
+  git checkout main && git pull --prune || return 1
+  if [[ -n "$b" && "$b" != main && "$(git for-each-ref --format='%(upstream:track)' "refs/heads/$b")" == "[gone]" ]]; then
+    git branch -D "$b"
+  fi
+}
 
 # 2025-12 add; pass bookmarks to nvim
 nvim() {
