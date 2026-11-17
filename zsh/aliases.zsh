@@ -19,6 +19,11 @@ alias v="nvim"
 
 alias weather="curl -4 http://wttr.in"
 
+# memex-static image pipeline (works from any directory)
+alias memex-watch='npm --prefix ~/Sites/memex-static run watch'
+alias memex-process='npm --prefix ~/Sites/memex-static run process'
+alias memex-deploy='~/Sites/memex-static/scripts/deploy-images.sh'
+
 # Local Dev / Laravel
 alias sql="mysql.server start"
 
