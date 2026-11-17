@@ -41,6 +41,9 @@ fi
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.dotfiles/zsh/aliases.zsh
 
+# Machine-local secrets and overrides; not tracked
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
 # Install Casks in the Applications folder
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
