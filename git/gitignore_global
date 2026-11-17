@@ -25,3 +25,5 @@ node_modules/
 ## Processing
 render/
 render*
+
+**/.claude/settings.local.json
