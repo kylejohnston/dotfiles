@@ -54,7 +54,15 @@ gb() {
 }
 gm() { git checkout main }
 
-gmp() { git checkout main && git pull }
+# Switch to main, pull, and delete the previous branch once its remote is gone (i.e. the PR merged and was auto-deleted)
+gmp() {
+  local b
+  b=$(git branch --show-current)
+  git checkout main && git pull --prune || return 1
+  if [[ -n "$b" && "$b" != main && "$(git for-each-ref --format='%(upstream:track)' "refs/heads/$b")" == "[gone]" ]]; then
+    git branch -D "$b"
+  fi
+}
 
 # 2025-12 add; pass bookmarks to nvim
 nvim() {
